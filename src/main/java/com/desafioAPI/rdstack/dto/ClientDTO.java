@@ -1,9 +1,7 @@
 package com.desafioAPI.rdstack.dto;
 
 import com.desafioAPI.rdstack.entities.Client;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
@@ -19,12 +17,16 @@ public class ClientDTO {
     @NotBlank(message = "Campo requerido")
     private String cpf;
 
+    @NotNull(message = "Campo requerido")
+    @Past(message = "Data de nascimento deve ser anterior à data atual")
     private LocalDate bithDate;
 
     @Positive(message = "A renda precisa ser positiva")
+    @NotNull(message = "Campo requerido")
     private Double income;
 
     @Positive(message = "O número de filhos precisa ser positivo")
+    @NotNull(message = "Campo requerido")
     private Integer children;
 
     public ClientDTO(){
