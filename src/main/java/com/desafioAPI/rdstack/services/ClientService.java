@@ -71,7 +71,7 @@ public class ClientService {
     public void copyToClient(ClientDTO dto, Client client) {
         client.setName(dto.getName());
         client.setCpf(dto.getCpf());
-        client.setBirthDate(dto.getBithDate());
+        client.setBirthDate(dto.getBirthDate());
         client.setIncome(dto.getIncome());
         client.setChildren(dto.getChildren());
     }

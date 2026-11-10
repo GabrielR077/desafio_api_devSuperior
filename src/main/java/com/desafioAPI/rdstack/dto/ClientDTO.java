@@ -19,7 +19,7 @@ public class ClientDTO {
 
     @NotNull(message = "Campo requerido")
     @Past(message = "Data de nascimento deve ser anterior à data atual")
-    private LocalDate bithDate;
+    private LocalDate birthDate;
 
     @Positive(message = "A renda precisa ser positiva")
     @NotNull(message = "Campo requerido")
@@ -33,11 +33,11 @@ public class ClientDTO {
 
     }
 
-    public ClientDTO(Integer id, String name, String cpf, LocalDate bithDate, Double income, Integer children) {
+    public ClientDTO(Integer id, String name, String cpf, LocalDate birthDate, Double income, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
-        this.bithDate = bithDate;
+        this.birthDate = birthDate;
         this.income = income;
         this.children = children;
     }
@@ -46,7 +46,7 @@ public class ClientDTO {
         id = client.getId();
         name = client.getName();
         cpf = client.getCpf();
-        bithDate = client.getBirthDate();
+        birthDate = client.getBirthDate();
         income = client.getIncome();
         children = client.getChildren();
     }
@@ -63,8 +63,8 @@ public class ClientDTO {
         return cpf;
     }
 
-    public LocalDate getBithDate() {
-        return bithDate;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
     public Double getIncome() {

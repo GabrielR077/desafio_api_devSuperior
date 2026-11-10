@@ -17,14 +17,14 @@ import java.time.Instant;
 @ControllerAdvice
 public class ClientExceptionHandler {
      @ExceptionHandler(ResourceNotFoundException.class)
-     public ResponseEntity<CustomError> resourcceNotFound(ResourceNotFoundException e, HttpServletRequest request){
+     public ResponseEntity<CustomError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request){
          HttpStatus status = HttpStatus.NOT_FOUND;
          CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
          return ResponseEntity.status(status).body(err);
     }
 
     @ExceptionHandler(DataBaseException.class)
-    public ResponseEntity<CustomError> resourcceNotFound(DataBaseException e, HttpServletRequest request){
+    public ResponseEntity<CustomError> resourceNotFound(DataBaseException e, HttpServletRequest request){
         HttpStatus status = HttpStatus.BAD_REQUEST;
         CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(err);
